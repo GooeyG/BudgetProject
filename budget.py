@@ -5,7 +5,7 @@ class Budget():
 
 
     def __repr__(self):
-        return f"The remaining amount in your balance is: {self.amount} - Reference; '{self.ref}'"
+        return f"The remaining amount in your {self.ref} budget is: £{self.amount}"
 
     def deposit(self, amount):
         self.amount += amount
@@ -33,9 +33,13 @@ class Entertainment(Budget):
         super().__init__(name)
         self.amount = amount
 
-Food_b = Food("Food shopping", 500)
-Bills_b = Bills("Work clothes", 100)
-Ent_b = Entertainment("Bowling", 25)
+Food_b = Food("Food", 500)
+Bills_b = Bills("Bills", 100)
+Ent_b = Entertainment("Entertainment", 25)
+
+print(Ent_b)
+print(Bills_b)
+print(Food_b)
 
 food = str(Food_b)
 food_int = ''.join(i for i in food if i.isdigit())
@@ -57,3 +61,5 @@ with open("bills.txt", "w") as billsVar:
 
 with open ("ent.txt", "w") as entVar:
     entVar.write(ent_int)
+
+
