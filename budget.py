@@ -1,11 +1,11 @@
-class Budget():
+class Budgets():
 
-    def __init__(self, ref):
-        self.ref = ref
+    def __init__(self, name):
+        self.name = name
 
 
     def __repr__(self):
-        return f"The remaining amount in your {self.ref} budget is: £{self.amount}"
+        return f"The remaining amount in your {self.name} budget is: £{self.amount}"
 
     def deposit(self, amount):
         self.amount += amount
@@ -18,48 +18,19 @@ class Budget():
         self.to = to
         self.from_ = from_
 
-class Food(Budget):
+class Food(Budgets):
     def __init__(self, name, amount):
         super().__init__(name)
         self.amount = amount
 
-class Bills(Budget):
+class Bills(Budgets):
     def __init__(self, name, amount):
         super().__init__(name)
         self.amount = amount
 
-class Entertainment(Budget):
+class Entertainment(Budgets):
     def __init__(self, name, amount):
         super().__init__(name)
         self.amount = amount
-
-Food_b = Food("Food", 500)
-Bills_b = Bills("Bills", 100)
-Ent_b = Entertainment("Entertainment", 25)
-
-print(Ent_b)
-print(Bills_b)
-print(Food_b)
-
-food = str(Food_b)
-food_int = ''.join(i for i in food if i.isdigit())
-print(food_int)
-
-bills = str(Bills_b)
-bills_int = ''.join(i for i in bills if i.isdigit())
-print(bills_int)
-
-ent = str(Ent_b)
-ent_int = ''.join(i for i in ent if i.isdigit())
-print(ent_int)
-
-with open("food.txt", "w") as foodVar:
-    foodVar.write(food_int)
-
-with open("bills.txt", "w") as billsVar:
-    billsVar.write(bills_int)
-
-with open ("ent.txt", "w") as entVar:
-    entVar.write(ent_int)
 
 
